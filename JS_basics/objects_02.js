@@ -42,3 +42,4 @@ for (let i = 0; i < books.length; i++){
     if (books[i].Author.fName.includes("a")) count++;
 }
 console.log(count)
+

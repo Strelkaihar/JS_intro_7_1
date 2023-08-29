@@ -147,10 +147,11 @@ let countT = 0
 console.log(storesObj);
 for (const obj of storesObj) {
     if (obj[0].toLowerCase() === "b" || obj[0].toLowerCase() === "p") countS++;
-    if(obj.toLowerCase().includes("book") || obj.toLowerCase().includes("pen")) countT++;
+    if (obj.toLowerCase().includes("book") || obj.toLowerCase().includes("pen")) countT++;
 }
 console.log(`Elements starting with 'B' or 'P' = ${countS}`);
 console.log(`Elements having 'book' or 'pen' = ${countT}`);
+
 /* Second way with two loops
 countS = 0;
 for (let i = 0; i < storesObj.length; i ++) {
@@ -290,11 +291,12 @@ function getMultipleOf5(num1, num2) {
     for(let i = Math.min(num1, num2); i <= Math.max(num1, num2); i ++) {
         if ( i % 5 === 0) arrayMultiple.push(i);
     }
-    return arrayMultiple;
+    if (num1 < num2) return arrayMultiple;
+    else return arrayMultiple.reverse();
 }
-console.log(getMultipleOf5(23, 5));
 console.log(getMultipleOf5(3, 17));
-console.log(getMultipleOf5(2, 4));
+console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(5, 5));
 
 // Task 20
 // Requirement:
