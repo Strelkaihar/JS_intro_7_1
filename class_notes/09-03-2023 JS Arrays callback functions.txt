@@ -1,0 +1,8 @@
+
+const number = [1, 2, 3, 6, 8, 15];
+const evenNumbers = number.filter(num => num % 2 === 0).map(num => num * 2);
+const numbersDivisible3 = number.filter(num => num % 3 === 0);
+
+const name = ["yuliia", "Igor", "aLEX"];
+
+names.map(name => name[0].toUpperCase() + name.slice(1).toLowerCase()).filter(name => name[0] === "A");
