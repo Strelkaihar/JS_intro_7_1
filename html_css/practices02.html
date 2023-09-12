@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics</title>
+    <style>
+        body {
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+        table, td, th {
+            border: solid;
+            border-width: 2px;
+            border-color: blue;
+            border: solid green 2px;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        th {
+            background-color: red;
+        }
+        td:nth-child(even) {
+            background-color: greenyellow;
+        }
+        tr:hover {
+            opacity: 10%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tables</h1>
+    <table>
+        <thead> 
+            <tr style="background-color: lightgray;"> 
+                <th>Last name</th>
+                <th>First name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Smith</td>
+                <td>John</td>
+                <td>jsmith@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Bach</td>
+                <td>Frank</td>
+                <td>fbach@yahoo.com</td>
+            </tr>
+            <tr>
+                <td>Doe</td>
+                <td>Jason</td>
+                <td>jdoe@hotmail.com</td>
+            </tr>
+            <tr>
+                <td>Doe</td>
+                <td>Jason</td>
+                <td>jdoe@hotmail.com</td>
+            </tr>
+            <tr>
+                <td>Doe</td>
+                <td>Jason</td>
+                <td>jdoe@hotmail.com</td>
+            </tr>
+            <tr>
+                <td>Doe</td>
+                <td>Jason</td>
+                <td>jdoe@hotmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Forms</h1>
+    <form action="#">
+        <p>
+            <label for="username">Username :</label>
+            <input type="username">
+        </p>
+        <p>
+            <label for="password">Password :</label>
+            <input type="password">
+        </p>
+        <p>
+            <label for="text">Text :</label>
+            <input type="text">
+        </p>
+        <p>
+            <label for="language">What languages you know of </label>
+            <br>
+            <label for="js">JavaScript</label>
+            <input type="checkbox">
+            <label for="java">Java</label>
+            <input type="checkbox">
+        </p>
+        <p>
+            <label for="gender">Please select you gender</label>
+            <br>
+            <label for="male">Male</label>
+            <input type="radio" name="gender">
+            <label for="female">Female</label>
+            <input type="radio" name="gender">
+            <label for="na">N/A</label>
+            <input type="radio" name="gender">
+        </p>
+        <p>
+            <label for="reference">Anything you want to share? </label>
+            <br>
+            <textarea name="" id="" cols="30" rows="10" placeholder="You can share all your thoughts here "></textarea>
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+        <p>
+            <input type="text">
+        </p>
+
+    </form>
+    <h1>Dropdowns</h1>
+    <select name="color">
+        <option value="color" disabled selected>Color</option>
+        <option value="red" >Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="black">Black</option>
+        <option value="white">White</option>
+    </select>
+   
+
+</body>
+</html>

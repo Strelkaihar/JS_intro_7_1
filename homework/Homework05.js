@@ -3,11 +3,12 @@
 // Write a function named countPos() which takes an array of numbers as an 
 // argument and returns how many elements are positive​ when invoked. 
 
-function countPos(array) {
-    let count = 0;
-    array.forEach(number => number > 0 ? count ++ : count)
-    return count;
-}
+const countPos = (arr) => arr.filter(num => num > 0).length
+// function countPos(array) {
+//     let count = 0;
+//     array.forEach(number => number > 0 ? count ++ : count)
+//     return count;
+// }
 console.log(countPos([-45, 0, 0, 34, 5, 67]));
 console.log(countPos([-23, -4, 0, 2, 5, 90, 123]));
 console.log(countPos([0, -1, -2, -3]));
@@ -16,13 +17,14 @@ console.log(countPos([0, -1, -2, -3]));
 // Write a function named countA() which takes a string argument and returns how
 //  many A or a there are in the given string when invoked.
 
-function countA (str) {
-    let count = 0;
-    for (let i = 0; i < str.length; i++) {
-        str[i].toLowerCase().includes("a") ? count ++ : count;
-    }
-    return count;
-}
+// function countA (str) {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         str[i].toLowerCase().includes("a") ? count ++ : count;
+//     }
+//     return count;
+// }
+const countA = (str) => str.split("").filter(char => char.toLowerCase() === "a").length
 console.log(countA("TechGlobal is a QA bootcamp"));
 console.log(countA("QA stands for Quality Assurance"));
 console.log(countA("Cypress"));
@@ -32,11 +34,14 @@ console.log(countA("Cypress"));
 // Write a function named as countVowels() which takes a string word as an 
 // argument and returns the count of the vowel letters when invoked.
 // NOTE: Vowel letters are A,E, O, U, I, a, e, o, u, i
-function countVowel(str) {
-    let countVow = 0;
-    for(let i = 0; i < str.length; i++) ("AEOUI").includes(str[i].toUpperCase()) ? countVow ++ : countVow;
-    return countVow;
-}
+
+// function countVowel(str) {
+//     let countVow = 0;
+//     for(let i = 0; i < str.length; i++) ("AEOUI").includes(str[i].toUpperCase()) ? countVow ++ : countVow;
+//     return countVow;
+// }
+
+const countVowel = (str) => str.split("").filter(char => ("AEOUI").includes(char.toUpperCase())).length
 console.log(countVowel("Hello"));
 console.log(countVowel("Hello World"));
 console.log(countVowel("JavaScript is fun"));
