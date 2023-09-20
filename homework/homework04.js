@@ -27,7 +27,7 @@ for (let i = 100; i >= 50; i -=5) {
 // Write a program that outputs the squares of all numbers starting 
 // from 0 to 7 (both inclusive).
 for (let i = 0; i <= 7; i ++) {
-    console.log(`The square of ${i} is = ${i ** 2}`);
+    console.log(`The square of ${i} is = ${i * i}`);
 }
 
 // Task 5
@@ -49,7 +49,7 @@ console.log(sum);
 // Mathematically, the factorial of a non-negative integer n is defined as:
 // n! = n × (n-1) × (n-2) × ... × 2 × 1
 
-const n = Math.floor(Math.random() * 10 +1);
+const n = Math.floor(Math.random() * 10) + 1;
 let factor = 1;
 for (let i = 1; i <= n; i++) {
     factor *= i
@@ -170,13 +170,12 @@ console.log(`Elements having 'book' or 'pen' = ${countS}`);
 // -Output how many elements are 10
 const storesNum = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78];
 console.log(storesNum);
-let numberQ = 10;
 let countMore = 0;
 let countLess = 0;
 let countTen = 0;
 for(const num of storesNum) {
-    if (num > numberQ) countMore ++;
-    else if (num < numberQ) countLess++;
+    if (num > 10) countMore ++;
+    else if (num < 10) countLess++;
     else countTen++;
 }
 console.log(`Elements that are more than 10 = ${countMore}`);
@@ -198,9 +197,7 @@ const secondArr = [9, 3, 67, 1, 0 ];
 const thirdArr = [];
 
 for (let i = 0; i < firstArr.length; i++) {
-    if (firstArr[i] > secondArr[i]) thirdArr.push(firstArr[i]);
-    else thirdArr.push(secondArr[i]);
-    // thirdArr.push(Math.max(firstArr[i], secondArr[i]));
+    thirdArr.push(Math.max(firstArr[i], secondArr[i]));
 }
 console.log(`1st array is = [${firstArr}]`);
 console.log(`2nd array is = [${secondArr}]`);
@@ -253,8 +250,7 @@ function reverseStringWords(str) {
     for (let i = 0; i < word.length; i++){
         word[i] = word[i].split("").reverse().join("");
     }
-    const reverseWord = word.join(" ");
-    return reverseWord;
+    return word.join(" ");
 
 }
 console.log(reverseStringWords("I like JavaScript"));
