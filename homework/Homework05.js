@@ -85,12 +85,16 @@ console.log(countWords("1 2 3 4"));
 // n! = n × (n-1) × (n-2) × ... × 2 × 1
 // Assume you will not be given a negative number.
 
-function factorial (number) {
-    factor = 1;
-    for (let i = 1; i <= number; i++ ){
-        factor *= i
-    } 
-    return factor;
+// function factorial (number) {
+//     factor = 1;
+//     for (let i = 1; i <= number; i++ ){
+//         factor *= i
+//     } 
+//     return factor;
+// }
+const factorial = (num) => {
+    if (num === 0 || num === 1) return 1
+    return num * factorial(num - 1)
 }
 console.log(factorial(5));
 console.log(factorial(4));

@@ -33,3 +33,4 @@ console.log(section);
 // querySelectorAll()
 const allImages = document.querySelectorAll("img");
 console.log(allImages);
+
