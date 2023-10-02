@@ -137,7 +137,7 @@ const getCommons = (array1, array2) => {
 }
 getCommons(["Javascript", "is", "fun"], ["abc", "xyz", "123"]);
 getCommons(["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] );
-getCommons( ["Javascript", "C#", "C#", "Python"], ["Python", "C#", "C++"] );
+getCommons( ["Javascript", "C#", "C#", "Python"], ["Python", "C#", "C++", "Python", 4, 6] );
 //Task 9 
 // Requirement:
 // Write a function named noXInVariables() which takes an array as argument and return an 

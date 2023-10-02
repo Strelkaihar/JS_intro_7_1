@@ -119,8 +119,8 @@ console.log(countPrimes([41, 53, 19, 47, 67]))
 //  returns a new array with all the duplicates removed.
 
 const removeDuplicates = arr =>  arr.filter((value, index) => arr.indexOf(value) === index);
-console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]))
-console.log(removeDuplicates([1, 2, 5, 2, 3]))
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60, 60]))
+console.log(removeDuplicates([1, 2, 5, 2, 3, 5]))
 console.log(removeDuplicates([0, -1, -2, -2, -1]))
 console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]))
 console.log(removeDuplicates(["1", "2", "3", "2", "3"]))
