@@ -197,7 +197,6 @@ console.log(fibonacciSeries1(2));
 
 const fibonacciSeries2 = (num) => {
     let fibonacci = [0, 1];
-    if(num <= 1) return fibonacci[0]
     for(let i = 0; i < num - 2; i++){
         fibonacci.push(fibonacci[i] + fibonacci[i + 1])
     }
@@ -267,3 +266,4 @@ console.log(isPowerOf3(27));
 console.log(isPowerOf3(100));
 console.log(isPowerOf3(81));
 console.log(isPowerOf3(9));
+

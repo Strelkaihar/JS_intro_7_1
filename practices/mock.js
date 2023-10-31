@@ -223,7 +223,6 @@ console.log(middleInt(-1, 25, 10));
 // firstDuplicate([ 1, 2, 3]) -> -1
 // firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) -> -1
 const firstDuplicate = (arr) => {
-    const duplicat = [];
     for(let i = 0; i <= arr.length; i++){
     let first = arr[i];
     let rest = arr.slice(i + 1);
@@ -410,3 +409,236 @@ console.log(isPrime(29))
 console.log(isPrime(-5))
 console.log(isPrime(0))
 console.log(isPrime(1))
+
+
+function doubleOtTripleWord(str) {
+    if(str.length % 2 === 0) return str + str + str;
+    else return str + str
+}
+console.log(doubleOtTripleWord(" "))
+
+function firstlastWord(str) {
+    if(str.includes(" ")) 
+    return str.slice(0, str.indexOf(" ")) + str.slice(str.lastIndexOf(" ") + 1)
+    else return str + str;
+}
+console.log(firstlastWord(" "))
+
+const hasVowel = (str) => str.split("").some(char => ("aeoui").includes(char.toLowerCase()));
+
+console.log(hasVowel("Helloo"))
+
+const startVovel = (str) => "aoeui".includes(str[0].toLowerCase())
+console.log(startVovel("Aello"))
+
+const averageOfEdges = (num1, num2, num3) => (Math.min(num1,num2,num3) + Math.max(num1, num2, num3) ) / 2
+console.log(averageOfEdges(1, 2, 3));
+console.log(averageOfEdges(-2, -2, 10));
+
+const replaceFirstLast = (str) => {
+    if(str.trim().length < 2) return "";
+    else return str[str.length - 1] + str.slice(1, str.length - 1) + str[0];
+}
+console.log(replaceFirstLast("Hello"))
+console.log(replaceFirstLast("   A   "))
+
+const swap4 = (str) => {
+    if (str.length < 8) return "";
+    else return str.slice(str.length - 4) + str.slice(4, str.length - 4) + str.slice(0,4)
+}
+console.log(swap4("123"))
+
+const swapFirstLastWord = (str) => {
+    if(!str.trim().includes(" ")) return ""
+    else return str.slice(str.lastIndexOf(" ") + 1) + str.slice(str.indexOf(" "), str.lastIndexOf(" ") + 1) + str.slice(0, str.indexOf(" "))
+}
+console.log(swapFirstLastWord("Hello "))
+
+const countPos = (arr) => arr.filter(x => x > 0).length
+console.log(countPos([-45, 3, 0, 0, 5, 2]))
+
+function getEven(num1, num2){
+    let arr = [];
+    for(let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++){
+        if(i % 2 === 0) arr.push(i)
+    }
+    return arr
+}
+console.log(getEven(4, 4));
+
+function getMultipleOf5(num1, num2) {
+    const arrayMultiple = [];
+    for(let i = Math.min(num1, num2); i <= Math.max(num1, num2); i ++) {
+        if ( i % 5 === 0) arrayMultiple.push(i);
+    }
+    if (num1 < num2) return arrayMultiple;
+    else return arrayMultiple.reverse();
+}
+console.log(getMultipleOf5(3, 17));
+console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(5, 5));
+
+const countNeg = (arr) => arr.filter(x => x < 0).length
+console.log(countNeg([-45, 0, 2, 4]))
+
+const countA = (str) => [...str].filter(x => x.toLowerCase() === "a").length
+console.log(countA("TechGlobal"))
+
+const countWords = (str) => str.trim().split(" ").length;
+console.log(countWords("1 2 3 4"));
+
+const factorial = (num) => {
+    let fac = 1;
+    for(let i = 1; i <= num; i++) {
+        fac *= i;
+    }
+    return fac
+}
+console.log(factorial(5))
+
+const count3OrLess = (str) => str.split(" ").filter(x => x.length <= 3 && x.length !== 0).length
+console.log(count3OrLess(""));
+
+const removeExtraSpaces = (str) => str.split(" ").filter(x => x.length >=1).join(" ")
+console.log(removeExtraSpaces("Hello"))
+console.log(removeExtraSpaces("   Hello    World   "))
+console.log(removeExtraSpaces("    JavaScript is      fun"))
+console.log(removeExtraSpaces(""))
+
+const middleInt = (num1, num2, num3) => {
+    return [num1, num2, num3].sort((a, b) => a-b)[1]
+}
+console.log(middleInt(-1, 25, 10))
+
+const firstDuplicate = (arr) => {
+    for(let i = 0; i <= arr.length; i++){
+    let first = arr[i];
+    let rest = arr.slice(i + 1);
+    if(rest.includes(first)) return first
+    }
+    return -1
+}
+console.log(firstDuplicate([ 3, 7, 10, 0, 3, 10 ]));
+console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ]));
+console.log(firstDuplicate([ 5, '5', 3, 7, 4 ]));
+console.log(firstDuplicate([ 123, 'abc', '123', 3, 'abc' ]));
+
+const getDuplicates = (arr) => {
+    const ar = []
+    for(let i = 0; i < arr.length; i++){
+        let rest = arr.slice(i + 1);
+        let num = arr[i];
+        if(rest.includes(num) && !ar.includes(num)) ar.push(num)
+    }
+    return console.log(ar);
+}
+getDuplicates([ 0, -4, -7, 5, 0, 10, 45, -7, 0 ]);
+getDuplicates([1, 2, 3, 0, 7]);
+getDuplicates(['A', 'foo', '12', 12, 'bar', 'a', 'a', 'foo' ]);
+
+const countVowels = (str) => str.split("").filter(x => "aeoui".includes(x.toLowerCase())).length
+console.log(countVowels("HELLO"))
+
+const  reverseStringWords = (str) => str.split(" ").map(x => x.split("").reverse().join("")).join(" ")
+console.log(reverseStringWords("Hello World"))
+console.log(reverseStringWords("Hello"))
+console.log(reverseStringWords("I like JavaScript"))
+
+const countConsonants = (str) => [...str].filter(x => !"aeoui".includes(x.toLowerCase())).length
+console.log(countConsonants("Hello"));
+console.log(countConsonants("Hello World"));
+
+const countMultipleWords = (array) => array.filter(x => x.trim().includes(" ")).length
+console.log(countMultipleWords([ "foo", "", " ", "foo bar", " foo" ]))
+console.log(countMultipleWords([ "foo", "bar", "foobar", " foobar " ]))
+
+const fizzBuzz = (num1, num2) =>{
+    let fizz = [];
+    for(let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+        if(i % 3 === 0 && i % 5 === 0) fizz.push("FizzBuzz")
+        else if (i % 3 === 0) fizz.push("Fizz")
+        else if (i % 5 === 0) fizz.push("Buzz")
+        else fizz.push(i)
+    }
+    return fizz.join("|");
+}
+console.log(fizzBuzz(13, 18))
+
+function isPalindrome (str) {
+    str1 = str.split("").reverse().join("").toLowerCase()
+    return str.toLowerCase() === str1
+}
+console.log(isPalindrome("Kayak"))
+
+function isPrime (num) {
+    if(num < 2) return false;
+    for(let i = 2; i <= Math.sqrt(num); i++) {
+        if(num % i === 0) return false
+    }
+    return true
+}
+console.log(isPrime(29))
+
+const add = (arr1, arr2) => {
+    let sum = [];
+    for(let i = 0; i <= Math.max(arr1.length, arr2.length) - 1; i++){
+        sum.push((arr1[i] || 0) + (arr2[i] || 0)) 
+    }
+    return sum
+}
+ console.log(add([3, 0, 0, 7, 5, 10],[6, 3, 2]));
+
+ const noA = (arr) => arr.map(x => x.toLowerCase().startsWith("a") ? "###" : x)
+ console.log(noA(["apple", "123", "ABC", "javascript"]))
+ console.log(noA(["apple", "abc", "ABC", "Alex", "A"]))
+
+ const no3and5 = (arr) => arr.map(x => {
+    if (x % 15 ===0) return (101) 
+    else if( x % 3 === 0) return 100
+    else if(x % 5 === 0) return 99
+    else return x
+ })
+console.log(no3and5([10, 11, 12, 13, 14, 15]))
+
+const no13 = (arr) => arr.map(x => x === 13 ? 0 : x)
+console.log(no13([1,2,3,4]));
+console.log(no13([13, 4, 1, 13]));
+
+const removeDuplicates = (arr) => {
+    let ar = [];
+    for(let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+        let rest = arr.slice(i + 1)
+        if(!rest.includes(num)) ar.push(num)
+    }
+    return ar
+}
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]))
+
+const noDigit = (str) => str.split("").filter(x => !"0123456789".includes(x)).join("")
+console.log(noDigit(""));
+console.log(noDigit("123Hello"));
+console.log(noDigit("123Hello world 112312"));
+
+const noVowel = (str) => str.split("").filter(x => !"aeoui".includes(x.toLowerCase())).join("")
+console.log(noVowel("TechGlobal"))
+
+const sumOfDigit = (str) => {
+    let num = 0;
+    for(const sym of str) {
+        if(Number(sym)) num +=Number(sym)
+    }
+    return num;
+}
+console.log(sumOfDigit("Age is 29"))
+
+const arrFactorial = (arr) => arr.map( x => {
+    let fac = 1; 
+    for(let i = 1; i <= x; i++){
+        fac *= i
+    }
+    return fac
+})
+console.log(arrFactorial([1, 2, 3, 4, 5]));
+console.log(arrFactorial([1, 2, 6, 4, 5]));
+

@@ -15,3 +15,4 @@ const function1 = function () {
 var function2 = () => console.log("function2");
 function1();
 function2();
+

@@ -1,9 +1,9 @@
 const numbers = [5, 10, 100];
-let sum = 0;
-for (const number of numbers) {
-    sum +=number
-}
-console.log(sum);
+// let sum = 0;
+// for (const number of numbers) {
+//     sum +=number
+// }
+// console.log(sum);
 
 const sumWithReduce = numbers.reduce((sum, number) => sum + number, 0);
 console.log(sumWithReduce);

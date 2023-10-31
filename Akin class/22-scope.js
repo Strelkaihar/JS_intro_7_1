@@ -18,7 +18,7 @@ function sum (arr) {
     }
     return sum
 }
-//console.log(total); ReferenceError: total is not defined same for let const and var
+console.log(total); //ReferenceError: total is not defined same for let const and var
 console.log(sum([1, 2, 3]));
 
 //Block scope 
