@@ -20,7 +20,7 @@ describe("Alerts", () => {
 
         
      })
-     it.only('Handling the confirmation alert', () => {
+     it('Handling the confirmation alert', () => {
         cy.visit('https://techglobal-training.com/frontend');
         cy.clickCard('Alerts')
         // * CONFIRMATION ALERT
@@ -32,11 +32,43 @@ describe("Alerts", () => {
         // * 6. Validate the result message equals "You rejected the alert by clicking Cancel."
 
         cy.get('#confirmation_alert').click();
-        cy.on('window:confirm', (str) => {
+        cy.once('window:confirm', (str) => { // cy.on
             expect(str).to.eq('Would you like to stay on TechGlobal Training application?')
             return false
         })
         cy.get('#action').should('have.text', 'You rejected the alert by clicking Cancel.')
 
+        cy.get('#confirmation_alert').click();
+        cy.get('#action').should('have.text', 'You confirmed the alert by clicking OK.')
+
      })
+     it.only('Handling Prompt alert', () => {
+        cy.visit('https://techglobal-training.com/frontend');
+        cy.clickCard('Alerts')
+
+        
+        // cy.window().then((win) => {
+        //     cy.stub(win, 'prompt').returns(null) // Its kind off click cancel button
+        // })
+        // cy.get('#prompt_alert').click()
+
+        // cy.window().then((win) => {
+        //     cy.stub(win, 'prompt')
+        //return falls  Its kind off click cancel button
+        // })
+        // cy.get('#prompt_alert').click()
+
+        cy.window().then((win) => {
+            cy.stub(win, 'prompt').returns('Hello') 
+        })
+        cy.get('#prompt_alert').click()
+
+        cy.window().then((win) => {
+            cy.stub(win, 'prompt').callsFake((message) => {
+                console.log(message)
+                return 'My message'
+            })
+        })
+        cy.get('#prompt_alert').click()
+    })
 })
