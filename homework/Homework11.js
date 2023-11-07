@@ -54,7 +54,6 @@ const canFormString = (str, str1) => {
         duplicated +=str1[i] 
         }
     }
-    console.log(duplicated, str1)
     return console.log(duplicated === str1)
 }
 canFormString("Hello", "Hi")

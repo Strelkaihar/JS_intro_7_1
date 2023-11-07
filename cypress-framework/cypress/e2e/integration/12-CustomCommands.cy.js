@@ -10,7 +10,7 @@ describe("Custom commands", () => {
     })
     it("Parent command", () => {
 
-        cy.visit('https://techglobal-training.com/frontend');
+        cy.visit(Cypress.env('SITE_URL'));
         cy.clickCard('Html Elements')
 
         cy.get('#main_heading').logText()
