@@ -4,7 +4,8 @@ module.exports = defineConfig({
   viewportHeight:1080,
   viewportWidth: 1980,
   chromeWebSecurity: false,
-  retries: 1,
+  defaultCommandTimeout: 6000,
+  retries: 0,
   env: {
     SITE_URL: 'https://techglobal-training.com/frontend'
   },
@@ -13,5 +14,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: 'cypress/e2e/integration/*.cy.{js,jsx,ts,tsx}',
+    baseUrl:'https://techglobal-training.com',
   },
 });

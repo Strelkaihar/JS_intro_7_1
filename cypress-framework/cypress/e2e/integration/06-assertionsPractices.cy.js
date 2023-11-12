@@ -1,7 +1,10 @@
 describe("Practices", () => {
-  it("Implicit assertions Practices 01", () => {
+  beforeEach(() => {
     cy.visit("https://techglobal-training.com/frontend");
-    cy.get(".cards").contains("Html Elements").click();
+    cy.clickCard("Html Elements");
+  })
+  it("Implicit assertions Practices 01", () => {
+
     /**
      * 1. Go to 'https://techglobal-training.com/frontend'
      * 2. Click on the 'Html Elements' card
@@ -21,8 +24,7 @@ describe("Practices", () => {
       .and("have.attr", "id", "testing_paragraph");
   });
   it("Implicit assertions Practices 02", () => {
-    cy.visit("https://techglobal-training.com/frontend");
-    cy.get(".cards").contains("Html Elements").click();
+
 
     /**
      * 1. Go to 'https://techglobal-training.com/frontend'
@@ -38,8 +40,7 @@ describe("Practices", () => {
     cy.get("#signin_button").should("be.visible").and("have.text", "Sign in").and("be.enabled");
   });
   it("Implicit assertions Practices 03", () => {
-    cy.visit("https://techglobal-training.com/frontend");
-    cy.get(".cards").contains("Html Elements").click();
+
     /**
    * 1. Go to 'https://techglobal-training.com/frontend'
    * 2. Click on the 'Html Elements' card
@@ -56,8 +57,7 @@ describe("Practices", () => {
   cy.get('#ordered_list_item2').should('be.visible').and('have.text', 'Selenium Webdriver');
   })
   it("Implicit assertions Practices 04", () => {
-    cy.visit("https://techglobal-training.com/frontend");
-    cy.get(".cards").contains("Html Elements").click();
+
     /**
      * 1. Go to 'https://techglobal-training.com/frontend'
      * 2. Click on the 'Html Elements' card
@@ -79,8 +79,7 @@ describe("Practices", () => {
     .and('have.text', 'Instagram');
   })
   it("Implicit assertions Practices 05", () => {
-    cy.visit("https://techglobal-training.com/frontend");
-    cy.get(".cards").contains("Html Elements").click();
+
     /**
    * 1. Go to 'https://techglobal-training.com/frontend'
    * 2. Click on the 'Html Elements' card
@@ -99,10 +98,8 @@ cy.get('#company_dropdown1').select('Tesla');
 cy.get('#tesla_check').should('have.text', 'Tesla').prev().and('be.enabled')
 .and('not.be.checked').check();
   })
-  it("Implicit assertions Practices 05", () => {
-    cy.visit("https://techglobal-training.com/frontend");
-    cy.get(".cards").contains("Dropdowns").click();
-        /**
+  it.skip("Implicit assertions Practices 06", () => {
+      /**
      * Test Case: Validate Dropdowns Functionality on TechGlobal Training Page
      * Go to https://techglobal-training.com/frontend
      * Select the "Dropdowns" card

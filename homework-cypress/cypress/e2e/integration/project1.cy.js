@@ -1,5 +1,5 @@
 describe("Homework1", () => {
-    it.only("Test Case 01 - Validate the Contact Us information", () => {
+    it("Test Case 01 - Validate the Contact Us information", () => {
         cy.visit("https://techglobal-training.com/frontend/project-1");
 
         const data = ['Contact Us', '2860 S River Rd Suite 480, Des Plaines, IL 60018', 'info@techglobalschool.com', '(773) 257-3010']
@@ -15,27 +15,22 @@ describe("Homework1", () => {
         .and('have.attr', 'required')
         cy.get('[for="name"]').should('have.text', 'Full name *')
     })
-    it("Test Case 03 - Validate the Gender radio button", () => {
+    it.only("Test Case 03 - Validate the Gender radio button", () => {
         cy.visit("https://techglobal-training.com/frontend/project-1");
 
         cy.get('.field .control .label').should('have.text', 'Gender *')
         .and('not.have.attr', 'required')
 
-        const arr = ['Male','Female', 'Prefer not to disclose'];
+        const expectedTexts = ['Male','Female', 'Prefer not to disclose'];
         cy.get('.radio').each((el, index) => {
-          cy.wrap(el).should('have.text', arr[index]).should('not.be.selected')
-
-        cy.get(':nth-child(2) > .mr-1').click()
-        cy.get(':nth-child(3) > .mr-1').should('not.be.selected')
-        cy.get(':nth-child(4) > .mr-1').should('not.be.selected')
-        cy.get(':nth-child(3) > .mr-1').click()
-        cy.get(':nth-child(2) > .mr-1').should('not.be.selected')
-        cy.get(':nth-child(4) > .mr-1').should('not.be.selected')
-        cy.get(':nth-child(4) > .mr-1').click()
-        cy.get(':nth-child(2) > .mr-1').should('not.be.selected')
-        cy.get(':nth-child(3) > .mr-1').should('not.be.selected')
+          cy.wrap(el).should('have.text', expectedTexts[index]).should('not.be.selected')
         })
+
+        cy.checkOptionAndValidateOthers('Male', expectedTexts)
+        cy.checkOptionAndValidateOthers('Female', expectedTexts)
+        cy.checkOptionAndValidateOthers('Prefer not to disclose', expectedTexts)
     })
+    
     const testData = [
         {
             description: 'Validate the Address input box',
@@ -69,6 +64,7 @@ describe("Homework1", () => {
 
             cy.contains('.label', test.label).should('have.text', test.label);
             cy.contains('.label', test.label).parent().find('input, textarea').should('be.visible')
+            .and('have.attr', 'placeholder', test.placeHolder)
             .and(test.required ? 'have.attr' : 'not.have.attr' ,'required')
         })
     })
