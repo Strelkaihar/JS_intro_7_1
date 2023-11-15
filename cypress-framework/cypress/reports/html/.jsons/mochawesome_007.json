@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 1,
+    "failures": 0,
+    "start": "2023-11-15T02:38:19.878Z",
+    "end": "2023-11-15T02:38:20.075Z",
+    "duration": 197,
+    "testsRegistered": 1,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ed1fe64e-dd9f-4613-98da-9ce126855d0e",
+      "title": "",
+      "fullFile": "cypress/e2e/integration/08-Multiple tabs.cy.js",
+      "file": "cypress/e2e/integration/08-Multiple tabs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee6ded71-edcd-45ae-bed1-a723013dc46a",
+          "title": "Interacting Multiple tabs",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Multiple tabs",
+              "fullTitle": "Interacting Multiple tabs Multiple tabs",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress/e2e/integration/08-Multiple tabs.cy.js\"\n}",
+              "code": "cy.visit('https://techglobal-training.com/frontend/');\ncy.clickCard('Multiple Windows');\n// * Go to https://techglobal-training.com/frontend/\n// * Click on the \"Multiple Windows\" card\n// * Click on the \"Apple\" link\n// * Validate that the child window title is \"Apple\"\n// * Close the window and switch back to the main window\n// * Validate title contains \"techglobal\"\n// cy.get('#apple').invoke('removeAttr', 'target').click().title().should('eq', 'Apple').go(-1)\n// .title().then((el) => {\n//     expect(el.toLowerCase()).to.be.contain('techglobal')\n// })\n/**\n* Go to https://techglobal-training.com/frontend/\n* Click on the \"Multiple Windows\" card\n* Click on the \"Apple\" link and validate URL contains \"https://www.apple.com/\"\n* Click on the \"Microsoft\" link and validate URL contains \"https://www.microsoft.com/en-us/\"\n* Click on the \"Tesla\" link and validate URL contains \"https://www.tesla.com/\"\n*/\n//  const name = ['https://www.apple.com', 'https://www.microsoft.com','https://www.tesla.com']\n//  cy.get('.SubPageLayout_content__KWihT  > div > ul > li > a').each((el,index) => {\n//      cy.wrap(el).invoke('removeAttr', 'target').click().url().should('contain', name[index]).go(-1);\n//  })\ncy.get('#apple').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.apple.com').go(-1);\ncy.get('#microsoft').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.microsoft.com').go(-1);\ncy.get('#tesla').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.tesla.com').go(-1);",
+              "err": {},
+              "uuid": "c76cb7be-2cc0-4f78-8cbe-7f667c7ed488",
+              "parentUUID": "ee6ded71-edcd-45ae-bed1-a723013dc46a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "c76cb7be-2cc0-4f78-8cbe-7f667c7ed488"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

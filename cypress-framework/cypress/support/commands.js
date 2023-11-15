@@ -21,10 +21,6 @@ Cypress.Commands.add("login", (userName, password) => {
     cy.get('#text_input2').type(password);
 })
 
-Cypress.Commands.add("login", (userName, password) => {
-    cy.get('#text_input1').type(userName);
-    cy.get('#text_input2').type(password);
-})
 Cypress.Commands.add("selectDropDownOption", (selector, value) => {
     cy.get(selector).select(value);
 })

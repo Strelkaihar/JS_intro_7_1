@@ -10,7 +10,7 @@ describe ('Login page test', () => {
         })
         
     })
-    it("Login without POM", function() {
+    it("Login without POM", {tags: ['@smoke', '@regression']}, function() {
         cy.clickCard('Project - Login Function')
 
         cy.get('#username').type(this.username)
