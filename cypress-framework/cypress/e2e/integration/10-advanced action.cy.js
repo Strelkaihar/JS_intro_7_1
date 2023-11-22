@@ -1,18 +1,18 @@
-describe("Keyboard and Mouse actions", () => {
+describe('Keyboard and Mouse actions', () => {
 
-    it("Keyboard actions ", () => {
-        cy.visit('https://techglobal-training.com/frontend');
-        cy.clickCard('Html Elements');
+    it('Keyboard actions ', () => {
+        cy.visit('https://techglobal-training.com/frontend')
+        cy.clickCard('Html Elements')
 
         // cy.get('#dropdown-button').trigger('mouseover');
         cy.get('#text_input1').realClick().realType('Bravo').realPress('Tab').realPress('KeyB')
-        .realPress('ArrowLeft').realPress('R').realPress('ArrowRight').realPress('Backspace');
+        .realPress('ArrowLeft').realPress('R').realPress('ArrowRight').realPress('Backspace')
         
         
-    });
-    it("Click, right click and double click ", () => {
-        cy.visit('https://techglobal-training.com/frontend');
-        cy.clickCard('Actions');
+    })
+    it('Click, right click and double click ', () => {
+        cy.visit('https://techglobal-training.com/frontend')
+        cy.clickCard('Actions')
         /**
    * Go to https://techglobal-training.com/frontend/
    * Click on the "Actions" card
@@ -27,14 +27,14 @@ describe("Keyboard and Mouse actions", () => {
    */
         cy.title().should('eq', 'TechGlobal Training | Actions')
         cy.url().should('eq', 'https://techglobal-training.com/frontend/actions')
-        cy.get('#click').should('have.text', 'Click on me').click().next().should('have.text', 'You clicked on a button!');
-        cy.get('#right-click').should('have.text', 'Right-Click on me').rightclick().next().should('have.text', 'You right-clicked on a button!');
-        cy.get('#double-click').should('have.text', 'Double-Click on me').dblclick().next().should('have.text', 'You double-clicked on a button!');
+        cy.get('#click').should('have.text', 'Click on me').click().next().should('have.text', 'You clicked on a button!')
+        cy.get('#right-click').should('have.text', 'Right-Click on me').rightclick().next().should('have.text', 'You right-clicked on a button!')
+        cy.get('#double-click').should('have.text', 'Double-Click on me').dblclick().next().should('have.text', 'You double-clicked on a button!')
     })
 
-    it("Drag and drop", () => {
-        cy.visit('https://techglobal-training.com/frontend');
-        cy.clickCard('Actions');
+    it('Drag and drop', () => {
+        cy.visit('https://techglobal-training.com/frontend')
+        cy.clickCard('Actions')
 
         //cy.get('dragAndDrop elemebnt').drag(whereYouWantToMoved)
 
@@ -45,14 +45,14 @@ describe("Keyboard and Mouse actions", () => {
         // * Verify that the first web element "Drag me" is successfully dropped into the second web element "Drop Here"
         // * Verify that a message appears next to the  web element stating, "An element dropped here!"
       
-        cy.get("button[id*='dr']:first-child").should('have.text', "Drag Me");
-        cy.get("button[id*='dr']:last-child").should('have.text', "Drop Here")
+        cy.get('button[id*=\'dr\']:first-child').should('have.text', 'Drag Me')
+        cy.get('button[id*=\'dr\']:last-child').should('have.text', 'Drop Here')
         cy.get('#drag_element').drag('#drop_element')
-        cy.get("button[id*='dr']:last-child").should('have.attr', 'id', 'drag_element')
+        cy.get('button[id*=\'dr\']:last-child').should('have.attr', 'id', 'drag_element')
         cy.get('#drag_and_drop_result').should('have.text', 'An element dropped here!')
-    });
-    it("Drag and drop", () => {
-        cy.visit('https://techglobal-training.com/frontend');
-        cy.clickCard('Actions');
-    });
-});
+    })
+    it('Drag and drop', () => {
+        cy.visit('https://techglobal-training.com/frontend')
+        cy.clickCard('Actions')
+    })
+})

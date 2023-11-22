@@ -1,4 +1,4 @@
-import LoginPage from "../../pages/LoginPage";
+import LoginPage from '../../pages/LoginPage'
 
 
 describe ('Login page test', () => {
@@ -10,7 +10,7 @@ describe ('Login page test', () => {
         })
         
     })
-    it("Login without POM", {tags: ['@smoke', '@regression']}, function() {
+    it('Login without POM', {tags: ['@smoke', '@regression']}, function() {
         cy.clickCard('Project - Login Function')
 
         cy.get('#username').type(this.username)
@@ -19,7 +19,7 @@ describe ('Login page test', () => {
         cy.get('#login_btn').click()
         cy.get('#success_lgn').should('be.visible')
     })
-    const loginPage = new LoginPage();
+    const loginPage = new LoginPage()
 
     it('Login with POM', function() {
         cy.clickCard('Project - Login Function')

@@ -1,5 +1,5 @@
 
-import TablesPage from "../../pages/TablesPage";
+import TablesPage from '../../pages/TablesPage'
 const tablesPage = new TablesPage()
 
 describe('Static Tables', () => {
@@ -11,7 +11,7 @@ describe('Static Tables', () => {
     })
    
     it('Verify the headers of the table',{tags: ['@smoke', '@regression']}, function() {
-        cy.clickCard('Tables');    
+        cy.clickCard('Tables')    
     /**
    * TEST CASE 1
    * Verify the headers of the table

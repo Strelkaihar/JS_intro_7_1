@@ -12,17 +12,17 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
-Cypress.Commands.add("clickCard", (link) => {
-    cy.get(".cards").contains(link).click();
+Cypress.Commands.add('clickCard', (link) => {
+    cy.get('.cards').contains(link).click()
 })
 
-Cypress.Commands.add("login", (userName, password) => {
-    cy.get('#text_input1').type(userName);
-    cy.get('#text_input2').type(password);
+Cypress.Commands.add('login', (userName, password) => {
+    cy.get('#text_input1').type(userName)
+    cy.get('#text_input2').type(password)
 })
 
-Cypress.Commands.add("selectDropDownOption", (selector, value) => {
-    cy.get(selector).select(value);
+Cypress.Commands.add('selectDropDownOption', (selector, value) => {
+    cy.get(selector).select(value)
 })
 /**
  * 	IMPORTANT NOTE
@@ -56,15 +56,15 @@ Cypress.Commands.add("selectDropDownOption", (selector, value) => {
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
-Cypress.Commands.add("logText",{prevSubject: true}, (subject) => {
-    const text = subject.text();
+Cypress.Commands.add('logText',{prevSubject: true}, (subject) => {
+    const text = subject.text()
     cy.log(`My text is ${text}`)
 })
 
-Cypress.Commands.add("haveText",{prevSubject: 'element'}, (subject, expectedText) => {
+Cypress.Commands.add('haveText',{prevSubject: 'element'}, (subject, expectedText) => {
     cy.wrap(subject).should('have.text', expectedText)
 })
-Cypress.Commands.add("assertAttribute ",{prevSubject: 'element'}, (subject, expectedAttr, value) => {
+Cypress.Commands.add('assertAttribute ',{prevSubject: 'element'}, (subject, expectedAttr, value) => {
     cy.wrap(subject).should('have.attr', expectedAttr, value)
 })
 

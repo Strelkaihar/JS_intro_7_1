@@ -3,4 +3,4 @@ class TablesPage {
         return cy.get('#static_table th')
     }
 }
-export default TablesPage;
+export default TablesPage

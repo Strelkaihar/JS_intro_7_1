@@ -1,6 +1,6 @@
-describe("Interacting Multiple tabs", () => {
+describe('Interacting Multiple tabs', () => {
 
-    it("Multiple tabs", () => {
+    it('Multiple tabs', () => {
         cy.visit('https://techglobal-training.com/frontend/')
         cy.clickCard('Multiple Windows')
 
@@ -8,9 +8,9 @@ describe("Interacting Multiple tabs", () => {
 
         cy.get('#apple').invoke('removeAttr', 'target').click()
         cy.go(-1)
-    });
+    })
 
-    it.only("Multiple tabs", () => {
+    it.only('Multiple tabs', () => {
         cy.visit('https://techglobal-training.com/frontend/')
         cy.clickCard('Multiple Windows')
 
@@ -37,9 +37,9 @@ describe("Interacting Multiple tabs", () => {
         //      cy.wrap(el).invoke('removeAttr', 'target').click().url().should('contain', name[index]).go(-1);
         //  })
         
-         cy.get('#apple').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.apple.com').go(-1);
-         cy.get('#microsoft').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.microsoft.com').go(-1);
-         cy.get('#tesla').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.tesla.com').go(-1);
-    });
+         cy.get('#apple').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.apple.com').go(-1)
+         cy.get('#microsoft').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.microsoft.com').go(-1)
+         cy.get('#tesla').invoke('removeAttr', 'target').click().url().should('contain', 'https://www.tesla.com').go(-1)
+    })
 
-});
+})

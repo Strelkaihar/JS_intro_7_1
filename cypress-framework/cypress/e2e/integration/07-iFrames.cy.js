@@ -1,7 +1,7 @@
 
-describe("iFrames and Cypress", () => {
+describe('iFrames and Cypress', () => {
 
-    it("iFrames", () => {
+    it('iFrames', () => {
         cy.visit('https://techglobal-training.com/frontend/')
         cy.clickCard('IFrames')
          /**
@@ -16,7 +16,7 @@ describe("iFrames and Cypress", () => {
          .should('have.text', 'Please fill out your information below')
     })
 
-    it.only("iFrames", () => {
+    it.only('iFrames', () => {
     cy.visit('https://techglobal-training.com/frontend/')
     cy.clickCard('IFrames')
     // * Go to https://techglobal-training.com/frontend/
@@ -27,10 +27,10 @@ describe("iFrames and Cypress", () => {
     // * Validate the result equals "You entered: John Doe"
     const name = ['John', 'Doe']
     cy.get('#form_frame').its('0.contentDocument.body').find('#first_name, #last_name ').each((el, index) => {
-        cy.wrap(el).type(name[index]);
+        cy.wrap(el).type(name[index])
     })
-    cy.get('#form_frame').its('0.contentDocument.body').find('#submit').click();
-    cy.get('#result').should('have.text',`You entered: ${name.join(' ')}`);
+    cy.get('#form_frame').its('0.contentDocument.body').find('#submit').click()
+    cy.get('#result').should('have.text',`You entered: ${name.join(' ')}`)
 
     })
-});
+})

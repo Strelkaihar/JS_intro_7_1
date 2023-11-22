@@ -1,6 +1,6 @@
 describe ('Timeouts', () => {
     it('Explicit or inline timeouts' , () => {
-        cy.visit('https://techglobal-training.com/frontend',{timeout: 10000});
+        cy.visit('https://techglobal-training.com/frontend',{timeout: 10000})
         cy.clickCard('Html Element', {timeout:10000})
 
         // cy.get('#randomName', {timeout: 8000});
@@ -10,7 +10,7 @@ describe ('Timeouts', () => {
         
     })
     it.only('', () => {
-        cy.visit('https://techglobal-training.com/frontend');
+        cy.visit('https://techglobal-training.com/frontend')
         cy.clickCard('Waits')
 
         cy.get('#red').click()

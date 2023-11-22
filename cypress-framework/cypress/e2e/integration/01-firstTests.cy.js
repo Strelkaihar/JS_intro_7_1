@@ -1,5 +1,5 @@
 // This is describe test block that holds group of tests
-describe("My first test", () => {
+describe('My first test', () => {
 
     // This is individual test
     // it("Visit techglobal training app home page", () => {
@@ -21,10 +21,10 @@ describe("My first test", () => {
     // it("My second test", () => {
     //     expect(true).equal(true)
     // })
-    it("My third test LOGO", () => {
-        cy.visit("https://techglobal-training.com");
-        cy.get("#logo").should("be.visible").click();
-        cy.get("#dropdown-button");
+    it('My third test LOGO', () => {
+        cy.visit('https://techglobal-training.com')
+        cy.get('#logo').should('be.visible').click()
+        cy.get('#dropdown-button')
     })
 
-});
+})

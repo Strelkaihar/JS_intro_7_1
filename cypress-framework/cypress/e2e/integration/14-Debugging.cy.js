@@ -1,13 +1,13 @@
 describe ('Debugging', () => {
     it('Debugging wait() - Hard wait' , () => {
-        cy.visit('https://techglobal-training.com/frontend');
+        cy.visit('https://techglobal-training.com/frontend')
         cy.clickCard('Html Element')
 
         //cy.wait(10000)
         cy.get('#checkbox_1').check()
     })
     it('Debugging pause() ' , () => {
-        cy.visit('https://techglobal-training.com/frontend');
+        cy.visit('https://techglobal-training.com/frontend')
         cy.clickCard('Project - Login Function')
 
         cy.get('#username').type('TechGlobal')
@@ -16,7 +16,7 @@ describe ('Debugging', () => {
         cy.get('#login_btn').click()
     })
     it('Debugging cy.debug() ' , () => {
-        cy.visit('https://techglobal-training.com/frontend');
+        cy.visit('https://techglobal-training.com/frontend')
         cy.clickCard('Project - Login Function')
 
         cy.get('#username').type('TechGlobal')

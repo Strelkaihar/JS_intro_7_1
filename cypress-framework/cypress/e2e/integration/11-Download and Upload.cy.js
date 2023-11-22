@@ -1,20 +1,20 @@
-describe("Download and Upload", () => {
+describe('Download and Upload', () => {
 
-    it("File Download", () => {
-        cy.visit('https://techglobal-training.com/frontend');
-        cy.clickCard('File Download & Upload');
+    it('File Download', () => {
+        cy.visit('https://techglobal-training.com/frontend')
+        cy.clickCard('File Download & Upload')
 
 //    * Go to https://techglobal-training.com/frontend/
 //    * Click on the "File Download" card
 //    * Click on the "TechGlobal School.pptx" file
 //    * Validate the file is downloaded in your Downloads file
-        cy.get('#file_download').click();
+        cy.get('#file_download').click()
         cy.readFile('/Users/strelka/Desktop/JS_intro_7/cypress-framework/cypress/downloads/SampleText.txt')
 
-    });
-    it.only("File Upload", () => {
-        cy.visit('https://techglobal-training.com/frontend');
-        cy.clickCard('File Download & Upload');
+    })
+    it.only('File Upload', () => {
+        cy.visit('https://techglobal-training.com/frontend')
+        cy.clickCard('File Download & Upload')
         // * Go to https://techglobal-training.com/frontend/
         // * Click on the "File Upload" card
         // * Send the path of the file as keys to the "Choose File" input box
@@ -26,4 +26,4 @@ describe("Download and Upload", () => {
         
         cy.get('.notification').should('have.text' , 'You uploaded SampleText.txt')
     })
-});
+})
