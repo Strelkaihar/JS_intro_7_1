@@ -16,9 +16,10 @@ console.log(hasLowerCase("   a   "));
 
 //Task 2
 // Requirement:
-// Write a function named noZero() which takes an array of numbers as argument and returns the array back with all zeros removed.
+// Write a function named noZero() which takes an array of numbers as 
+//argument and returns the array back with all zeros removed.
 // Examples:
-// noZero([1]) 		-> [1]
+//noZero([1]) 		-> [1]
 // noZero( [1, 1, 10]​) 	-> [1, 1, 10]​
 // noZero([0, 1, 10]) 	-> [1, 10]
 // noZero([0, 0, 0]) 	-> []

@@ -19,10 +19,10 @@ const fizzBuzz1 = (num) => {
     if(num % 15 === 0) console.log("FizzBuzz")
     else if (num % 3 === 0) console.log("Fizz")
     else if (num % 5 === 0) console.log("Buzz")
-    else return num
+    else return console.log(num)
 }
 fizzBuzz1(0);
-fizzBuzz1(1);
+fizzBuzz1(2);
 fizzBuzz1(3);
 fizzBuzz1(5);
 fizzBuzz1(30);
@@ -172,7 +172,6 @@ const fibonacciSeries1 = (num) => {
     if(num <= 1) return [0]
     for(let i = 0; i < num - 2; i++){
         fibonacci.push(fibonacci[i] + fibonacci[i + 1])
-        console.log(fibonacci)
     }
     return fibonacci;
 }
@@ -266,4 +265,3 @@ console.log(isPowerOf3(27));
 console.log(isPowerOf3(100));
 console.log(isPowerOf3(81));
 console.log(isPowerOf3(9));
-
