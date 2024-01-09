@@ -1861,7 +1861,7 @@ isAnagram("123", "1234")
 // Write a function named count() which takes an array of numbers and a boolean value as 
 // arguments. It will return the total count of the even numbers if the boolean value is 
 // true. And return the total count of the odd numbers if the boolean value is false.
-const count = (arr, bool) => {
+const cosnt = (arr, bool) => {
     let count = 0
     for(let i = 0; i < arr.length ; i++) {
         if(bool === true && arr[i] % 2 === 0) count ++ 
@@ -1897,7 +1897,6 @@ console.log(sumDigitsDouble("n0numh3r3"));
 //Task 8
 // Write a function named countOccurrence() which takes two string arguments and returns
 //  how many times that the first string can form the second string.
-
 const countOccurrence = (str, str1) => {
     let duplicated = ""
     for (let i = 0; i < str.length; i++) {
