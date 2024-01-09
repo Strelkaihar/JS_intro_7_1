@@ -2410,5 +2410,3 @@ calculateLCM(48, 18)
 calculateLCM(0, 5)
 calculateLCM(21, 14)
 calculateLCM(60, 48)
-
-
